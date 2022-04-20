@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from .serializers import CategorySerializer, ProductSerializer, FeedbackSerializer
 from catalog.models import Category, Product
@@ -8,13 +8,15 @@ from rest_framework.response import Response
 
 
 class CategoriesViewset(viewsets.ModelViewSet):
-    queryset = Category.objects.all().order_by('name')
+    queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
 
 class ProductViewset(viewsets.ModelViewSet):
-    queryset = Product.objects.all().order_by('name')
+    queryset = Product.objects.all()
     serializer_class = ProductSerializer
+    filter_backends = [DjangoFilterBackend]
+    filter_fields = ['category']
 
 
 class FeedbackAPIView(viewsets.ModelViewSet):
