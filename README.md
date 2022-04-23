@@ -6,5 +6,9 @@
 Запуск сервера в Linux тут: runserver.sh  
 
 Админка тут: http://127.0.0.1:8000/admin/  
-Список методов API тут: http://127.0.0.1:8000/api/  
+Get/Post API "Категорий" тут: http://127.0.0.1:8000/api/category/  
+Get/Post API "Продуктов" тут: http://127.0.0.1:8000/api/product/  
+Get API "Отзывов" тут: http://127.0.0.1:8000/api/feedback_list/  
+Post API "Отзывов" тут: http://127.0.0.1:8000/api/feedback/  
+Put/Delete API "Отзывов" тут: http://127.0.0.1:8000/api/feedback_edit/  
 Swagger тут: http://127.0.0.1:8000/swagger-ui/  

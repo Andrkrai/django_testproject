@@ -9,3 +9,6 @@ class Feedback(models.Model):
     product = models.ForeignKey(catalog.models.Product, on_delete=models.PROTECT)
     description = models.TextField()
     grade = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return f'{self.full_name} {self.product}'

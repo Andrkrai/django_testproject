@@ -6,9 +6,15 @@ class Category(models.Model):
     description = models.CharField(max_length=100)
     slug = models.SlugField(max_length=60)
 
+    def __str__(self):
+        return self.name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=200)
     slug = models.SlugField(max_length=100)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.name
